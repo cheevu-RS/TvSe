@@ -15,7 +15,7 @@ class App:
         if not f:
             self.w1 = Label(self.frame,text="You are not binging\n yet,add a season",fg="green",bg="black",width="25",height="5")
             self.w1.pack()
-            self.button = Button(self.frame, text="QUIT", fg="red", command=self.on_close)
+            self.button = Button(self.frame, text="QUIT", fg="red", command=lambda:self.on_close(master))
             self.button.pack(side=LEFT)
             self.button1 = Button(self.frame,text="browse",command=lambda:self.browse(master))
             self.button1.pack(side=LEFT)
@@ -25,7 +25,7 @@ class App:
                 w = json.load(read_file)
             self.w = Label(self.frame,text="Binge away to glory\n by pressing the spacebar\n/clicking the play button \n %s"%w,fg="green",bg="black",width="25",height="5")
             self.w.pack()
-            self.button = Button(self.frame, text="QUIT", fg="red", command=self.on_close)
+            self.button = Button(self.frame, text="QUIT", fg="red", command=lambda:self.on_close(master))
             self.button.pack(side=LEFT)
             self.button1 = Button(self.frame,text="browse",command=lambda:self.browse(master))
             self.button1.pack(side=LEFT)
